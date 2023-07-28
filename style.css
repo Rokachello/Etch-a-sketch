@@ -1,0 +1,25 @@
+
+.grid-container{
+
+    height: 500px;
+    width: 500px;
+    background-color: darkkhaki;
+    border: 5px solid;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column; 
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.box{
+    background-color: aqua;
+    flex: 1;
+    border: 1px solid black;
+}
+
