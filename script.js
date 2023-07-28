@@ -3,9 +3,23 @@ let size = +prompt("Input grid size")
 const gridContainer = document.querySelector('.grid-container')
 
 // checks user input and creates correct grid.
-checkInput(size)
+checkInput(size);
+
+const xxx = document.querySelector(".test");
+console.log(xxx)
+xxx.addEventListener(`click`, () =>
+{xxx.classList.add(`change-color`)}
+)
 
 
+const squareBoxes = document.querySelectorAll(`.box`);
+console.log(squareBoxes)
+squareBoxes.forEach((box) =>
+    box.addEventListener(`mouseover`, () =>
+    {
+        box.classList.add(`change-color`)
+    }
+    ))
 
 
 // functions
@@ -26,7 +40,6 @@ function createGrid(gridSize){
     }
     
 function checkInput(input){
-   
  if(input>50){
         createGrid(50)
     }
@@ -35,5 +48,6 @@ function checkInput(input){
     }
     else {createGrid(input)}
 }
+
 
 

@@ -23,3 +23,11 @@
     border: 1px solid black;
 }
 
+.change-color{
+    background-color: brown;
+}
+
+.test{
+    width: 100px;
+    height: 100px;
+}
