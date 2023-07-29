@@ -4,8 +4,9 @@
     var output = document.getElementById("demo");
   let size = slider.value;
   checkInput(size)
-    size = slider.value;
-    output.innerHTML = slider.value + " x " + slider.value; // Display the default slider value
+  output.innerHTML = slider.value + " x " + slider.value; // Display the default slider value
+  document.getElementById(`xxx`).style.backgroundColor = "Red"
+
 
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
@@ -14,8 +15,9 @@ slider.oninput = function() {
     size = slider.value
     output.innerHTML = slider.value + " x " + slider.value;
     checkInput(size)
-
 }
+
+
   
 // color change on hover
 function addColorChangeOnHover(){
@@ -24,13 +26,17 @@ console.log(squareBoxes)
 squareBoxes.forEach((box) =>
     box.addEventListener(`mouseover`, () =>
     {
-        box.classList.add(`change-color`)
+        
+        //box.classList.add(`change-color`)
+        let color = generateRandomColor()
+        box.style.backgroundColor = color
     }
     ))
 }
 
-// functions
 
+
+// functions
 
 function gridSize(gridSize){
     for(let i = 0;  i<gridSize; i++){
@@ -74,4 +80,12 @@ function createGrid(){
   }
   
 
+function generateRandomColor(){
+    let maxVal = 0xFFFFFF; // 16777215
+    let randomNumber = Math.random() * maxVal; 
+    randomNumber = Math.floor(randomNumber);
+    randomNumber = randomNumber.toString(16);
+    let randColor = randomNumber.padStart(6, 0);   
+    return `#${randColor.toUpperCase()}`
+}
 
