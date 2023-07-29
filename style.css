@@ -1,14 +1,19 @@
 
+.content-container{
+    display: flex;
+}
+
 .grid-container{
 
-    height: 500px;
-    width: 500px;
-    background-color: darkkhaki;
+    height: 750px;
+    width: 750px;
+    background-color: rgb(30, 255, 9);
     border: 5px solid;
     margin: auto;
     padding: 10px;
     display: flex;
     flex-direction: column; 
+ 
 }
 
 .row{
@@ -25,5 +30,21 @@
 
 .change-color{
     background-color: brown;
+}
+
+.content-container{
+    padding-top: 50px;
+    margin-left: 50px;
+    background-color: rgb(175, 47, 187);
+}
+.slider{
+    width: 100%;
+}
+
+.settings-container{
+    background-color: chocolate;
+   margin-left: 100px;
+   width: 300px;
+   padding: 10px;
 }
 

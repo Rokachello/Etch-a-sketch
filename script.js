@@ -1,23 +1,22 @@
   
   const gridContainer = document.querySelector('.grid-container')
-  let size = 10;
-  createGrid();
-  
-  
-  
-  // checks user input and creates correct grid.
-  const sizeButton = document.querySelector('.size-button');
-        sizeButton.addEventListener(`click`, () =>
-        {
-            clearGrid()
-            size = +prompt("Input grid size")
-            checkInput(size)
-           
-        })
+  var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+  let size = slider.value;
+  checkInput(size)
+    size = slider.value;
+    output.innerHTML = slider.value + " x " + slider.value; // Display the default slider value
 
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+  clearGrid()
+    size = slider.value
+    output.innerHTML = slider.value + " x " + slider.value;
+    checkInput(size)
 
- 
-
+}
+  
 // color change on hover
 function addColorChangeOnHover(){
 const squareBoxes = document.querySelectorAll(`.box`);
@@ -29,9 +28,6 @@ squareBoxes.forEach((box) =>
     }
     ))
 }
-
-  
-
 
 // functions
 
