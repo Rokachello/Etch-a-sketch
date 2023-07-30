@@ -1,38 +1,55 @@
   
   const gridContainer = document.querySelector('.grid-container')
-  var slider = document.getElementById("myRange");
+    var slider = document.getElementById("myRange");
     var output = document.getElementById("demo");
   let size = slider.value;
   checkInput(size)
   output.innerHTML = slider.value + " x " + slider.value; // Display the default slider value
-  document.getElementById(`xxx`).style.backgroundColor = "Red"
+
 
 
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
-  output.innerHTML = this.value;
-  clearGrid()
-    size = slider.value
-    output.innerHTML = slider.value + " x " + slider.value;
-    checkInput(size)
+  output.innerHTML = this.value + " x " + this.value;
+  clearGrid();
+  size = slider.value;
+  gridSize(size); // Add this line to create the new grid
 }
-
-
   
-// color change on hover
-function addColorChangeOnHover(){
-const squareBoxes = document.querySelectorAll(`.box`);
-console.log(squareBoxes)
+
+// Random colored pixel on button click
+const randomButton = document.querySelector('#random-color');
+randomButton.addEventListener(`click`, () =>
+    {
+      const squareBoxes = document.querySelectorAll(`.box`);
+
 squareBoxes.forEach((box) =>
     box.addEventListener(`mouseover`, () =>
     {
-        
-        //box.classList.add(`change-color`)
         let color = generateRandomColor()
+        box.style.backgroundColor = color
+        randomButton.style.backgroundColor = "Gold"
+    }
+    ))
+    })
+
+    // Black pixel on button click
+const blackButton = document.querySelector('#black-pixels');
+blackButton.addEventListener(`click`, () =>
+    {
+      const squareBoxes = document.querySelectorAll(`.box`);
+
+squareBoxes.forEach((box) =>
+    box.addEventListener(`mouseover`, () =>
+    {
+        let color = "Black"
         box.style.backgroundColor = color
     }
     ))
-}
+    })
+
+
+
 
 
 
@@ -51,6 +68,7 @@ function gridSize(gridSize){
     row.appendChild(box);
         }
     }
+   // addColorChangeOnHover()
     }
     
 function checkInput(input){
@@ -61,7 +79,7 @@ function checkInput(input){
         gridSize(2)
     }
     else {gridSize(input)}
-    addColorChangeOnHover()
+    
 }
 
 
