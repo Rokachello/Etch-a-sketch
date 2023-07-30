@@ -7,12 +7,13 @@
 
     height: 750px;
     width: 750px;
-    background-color: rgb(30, 255, 9);
+    background-color: rgb(94, 72, 63);
     border: 5px solid;
     margin: auto;
     padding: 10px;
     display: flex;
     flex-direction: column; 
+    flex: 0 0 750px;
  
 }
 
@@ -23,7 +24,7 @@
 }
 
 .box{
-    background-color: aqua;
+    background-color: #BED3E5;
     flex: 1;
     border: 1px solid black;
 }
@@ -44,7 +45,7 @@
 }
 
 .settings-container{
-    background-color: chocolate;
+    background-color: rgb(196, 104, 39);
    margin-left: 100px;
    width: 300px;
    padding: 10px;
@@ -55,6 +56,7 @@
 button{
     margin: 10px;
     padding: 10px;
+    background-color:#BED3E5;
 }
 
 

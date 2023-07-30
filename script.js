@@ -23,12 +23,15 @@ randomButton.addEventListener(`click`, () =>
     {
       const squareBoxes = document.querySelectorAll(`.box`);
 
+        removeButtonColor();
+        randomButton.style.backgroundColor = "Gold"
+
 squareBoxes.forEach((box) =>
     box.addEventListener(`mouseover`, () =>
     {
         let color = generateRandomColor()
         box.style.backgroundColor = color
-        randomButton.style.backgroundColor = "Gold"
+        
     }
     ))
     })
@@ -37,7 +40,11 @@ squareBoxes.forEach((box) =>
 const blackButton = document.querySelector('#black-pixels');
 blackButton.addEventListener(`click`, () =>
     {
+      
       const squareBoxes = document.querySelectorAll(`.box`);
+
+      removeButtonColor();
+      blackButton.style.backgroundColor = "Gold"
 
 squareBoxes.forEach((box) =>
     box.addEventListener(`mouseover`, () =>
@@ -48,7 +55,38 @@ squareBoxes.forEach((box) =>
     ))
     })
 
+    //eraser on button click
+    const eraser = document.querySelector('#eraser');
+    eraser.addEventListener(`click`, () =>
+        {
+          const squareBoxes = document.querySelectorAll(`.box`);
 
+          removeButtonColor();
+          eraser.style.backgroundColor = "Gold"
+    
+    squareBoxes.forEach((box) =>
+        box.addEventListener(`mouseover`, () =>
+        {
+            let color = "#BED3E5"
+            box.style.backgroundColor = color
+        }
+        ))
+        })
+
+        // clear grid
+        const clear = document.querySelector(`#clear`);
+        clear.addEventListener(`click`,() => 
+        {
+          const squareBoxes = document.querySelectorAll(`.box`);
+          removeButtonColor();
+          clear.style.backgroundColor = "Gold"
+
+          squareBoxes.forEach((box) =>
+          box.style.backgroundColor = `#BED3E5`
+          )
+
+        }
+        )
 
 
 
@@ -107,3 +145,10 @@ function generateRandomColor(){
     return `#${randColor.toUpperCase()}`
 }
 
+function removeButtonColor(){
+  const buttons = document.querySelectorAll("button");
+  
+  buttons.forEach((button) =>
+    button.style.background = "#BED3E5"
+  )
+}
